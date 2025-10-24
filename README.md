@@ -33,7 +33,7 @@ A seguir estão descritas as principais tecnologias e ferramentas empregadas no 
 | Ferramenta / Tecnologia | Versão | Link                                                                          |
 | ----------------------- | -----: | ----------------------------------------------------------------------------- |
 | VirtualBox              |  7.2.2 | [virtualbox.org](https://www.virtualbox.org/)                                 |
-| Kali Linux              | 2025.3 | [kali.org](https://www.kali.org/get-kali/#kali-platforms)                      |
+| Kali Linux              | 2025.3 | [kali.org](https://www.kali.org/get-kali/#kali-platforms)                     |
 | Metasploitable 2        |     v2 | [Metasploitable2](https://sourceforge.net/projects/metasploitable/files/Metasploitable2/) |
 
 As demais ferramentas utilizadas neste laboratório são fornecidas por padrão nas imagens oficiais do Kali Linux. Se, por algum motivo, estiverem ausentes ou se preferir reinstalá‑las, é possível instalar/atualizar essas ferramentas diretamente pelo terminal do Kali com o gerenciador de pacotes ```apt```. 
@@ -50,3 +50,51 @@ nmap --version
 ```
 
 ## Configuração do Ambiente
+
+A seguir estão as instruções reprodutíveis para criar um laboratório isolado com Kali Linux (atacante), Metasploitable2 (alvo) e uma rede Host-Only dedicada.
+
+### A. Instalar o VirtualBox (GUI)
+1. Acesse o site oficial do VirtualBox
+2. Baixe o instalador adequado ao seu sistema (Windows / macOS / Linux).
+3. Execute o instalador clicando duas vezes no arquivo baixado. Em seguida, siga as instruções do assistente e aceite a instalação dos drivers de rede e extensões quando solicitado.
+4. Finalize e, se solicitado, reinicie o computador.
+5. Abra o VirtualBox e confirme a interface.
+
+### B. Criar a VM Kali (a partir da ISO)
+1. No VirtualBox clique em New (Novo).
+2. VM Name: Kali → ISO Image: selecione a ISO do Kali baixada → OS: Linux → OS Destribuition: Debian → OS Version: Debian (64-bit) → Next.
+
+<div align="right">
+  <details>
+    <summary font-weight: bold;>
+      [Configuração Kali Linux]
+    </summary>
+    <img src="images/Kali01.png" alt="Configuração Kali Linux" width="600">
+  </details>
+</div>
+
+3. Para o uso neste laboratório, manteremos as especificações de hardware virtual recomendadas pelo próprio sistema.
+
+<div align="right">
+  <details>
+    <summary font-weight: bold;>
+      [Especificação de hardware virtual]
+    </summary>
+    <img src="images/Kali02.png" alt="Configuração Kali Linux" width="600">
+  </details>
+</div>
+
+4. Na página seguinte, verifique se todas as especificações estão corretas e finalize a configuração da máquina virtual.
+5. Selecione a VM criada e clique em Start (Iniciar) para iniciar a VM e executar o instalador do Kali.
+6. Instale o Kali normalmente pelo instalador gráfico. Selecione o idioma e a região de preferência, defina um usuário e uma senha que serão utilizados posteriormente. Para este laboratório, não é necessário criar partições de armazenamento.
+
+<div align="right">
+  <details>
+    <summary font-weight: bold;>
+      [Instalação Kali Linux]
+    </summary>
+    <img src="images/Kali03.png" alt="Instalação Kali Linux" width="600">
+  </details>
+</div>
+
+7. A instalação pode levar alguns minutos. Após concluída, o Kali estará pronto para uso.
