@@ -33,7 +33,7 @@ A seguir estão descritas as principais tecnologias e ferramentas empregadas no 
 | Ferramenta / Tecnologia | Versão | Link                                                                          |
 | ----------------------- | -----: | ----------------------------------------------------------------------------- |
 | VirtualBox              |  7.2.2 | [virtualbox.org](https://www.virtualbox.org/)                                 |
-| Kali Linux              | 2025.3 | [kali.org](https://www.kali.org/get-kali/#kali-platforms)                                             |
+| Kali Linux              | 2025.3 | [kali.org](https://www.kali.org/get-kali/#kali-platforms)                      |
 | Metasploitable 2        |     v2 | [Metasploitable2](https://sourceforge.net/projects/metasploitable/files/Metasploitable2/) |
 
 As demais ferramentas utilizadas neste laboratório são fornecidas por padrão nas imagens oficiais do Kali Linux. Se, por algum motivo, estiverem ausentes ou se preferir reinstalá‑las, é possível instalar/atualizar essas ferramentas diretamente pelo terminal do Kali com o gerenciador de pacotes ```apt```. 
