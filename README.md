@@ -51,7 +51,7 @@ nmap --version
 
 ## Configuração do Ambiente
 
-A seguir estão as instruções reprodutíveis para criar um laboratório isolado com Kali Linux (atacante), Metasploitable2 (alvo) e uma rede Host-Only dedicada.
+A seguir estão as instruções reprodutíveis para criação do laboratório isolado com Kali Linux (atacante), Metasploitable2 (alvo) e uma rede Host-Only dedicada.
 
 ### A. Instalar o VirtualBox (GUI)
 1. Acesse o site oficial do VirtualBox
