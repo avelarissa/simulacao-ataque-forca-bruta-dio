@@ -69,7 +69,7 @@ A seguir estão as instruções reprodutíveis para criação do laboratório is
     <summary font-weight: bold;>
       [Configuração Kali Linux]
     </summary>
-    <img src="images/Kali01.png" alt="Configuração Kali Linux" width="600">
+    <img src="images/Kali_01.png" alt="Configuração Kali Linux" width="600">
   </details>
 </div>
 
@@ -80,7 +80,7 @@ A seguir estão as instruções reprodutíveis para criação do laboratório is
     <summary font-weight: bold;>
       [Especificação de hardware virtual]
     </summary>
-    <img src="images/Kali02.png" alt="Configuração Kali Linux" width="600">
+    <img src="images/Kali_02.png" alt="Configuração Kali Linux" width="600">
   </details>
 </div>
 
@@ -93,7 +93,7 @@ A seguir estão as instruções reprodutíveis para criação do laboratório is
     <summary font-weight: bold;>
       [Instalação Kali Linux]
     </summary>
-    <img src="images/Kali03.png" alt="Instalação Kali Linux" width="600">
+    <img src="images/Kali_03.png" alt="Instalação Kali Linux" width="600">
   </details>
 </div>
 
