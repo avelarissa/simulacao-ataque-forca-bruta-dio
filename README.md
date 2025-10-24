@@ -27,7 +27,6 @@ A seguir estão descritas as principais tecnologias e ferramentas empregadas no 
 | smbclient                   | Cliente SMB          | Acesso e testes de autenticação em shares SMB; verificação prática de permissões. |
 | Wordlists (ex.: users.txt, passwords.txt) | Base para ataques | Listas de usuários e senhas usadas nas tentativas de força bruta. |
 
-
 ## Links oficiais para download
 
 | Ferramenta / Tecnologia | Versão | Link                                                                          |
@@ -51,9 +50,11 @@ nmap --version
 
 ## Configuração do Ambiente
 
+### 1. Instalação do VirtualBox, criação das VMs (Kali, Metasploitable) e preparo da rede Host-Only
+
 A seguir estão as instruções reprodutíveis para criação do laboratório isolado com Kali Linux (atacante), Metasploitable2 (alvo) e uma rede Host-Only dedicada.
 
-### A. Instalar o VirtualBox (GUI)
+### A. Instalar o VirtualBox
 1. Acesse o site oficial do VirtualBox
 2. Baixe o instalador adequado ao seu sistema (Windows / macOS / Linux).
 3. Execute o instalador clicando duas vezes no arquivo baixado. Em seguida, siga as instruções do assistente e aceite a instalação dos drivers de rede e extensões quando solicitado.
@@ -178,3 +179,23 @@ A seguir estão as instruções reprodutíveis para criação do laboratório is
 </div>
 
 9. Clique em OK e inicie a VM. Login: msfadmin / Password: msfadmin.
+
+### D. Configuração da Rede Host-Only
+
+Para cada VM (Kali Linux e Metasploitable2):
+
+1. Selecione a VM → Settings → Expert → Network.
+2. Em Adapter 1, marque Enable Network Adapter.
+3. Em Attached to, escolha Rede somente do hospedeiro (Host-Only Adapter).
+
+<div align="right">
+  <details>
+    <summary font-weight: bold;>
+      [Configuração da Rede Host-Only]
+    </summary>
+    <img src="images/Metasploitable_07.png" alt="Configuração da Rede Host-Only" width="600">
+  </details>
+</div>
+
+4. Certifique-se de que não há outros adaptadores habilitados.
+5. Salve as configurações e inicie as máquinas.
