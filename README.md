@@ -69,7 +69,7 @@ A seguir estão as instruções reprodutíveis para criação do laboratório is
     <summary font-weight: bold;>
       [Configuração Kali Linux]
     </summary>
-    <img src="images/Kali_01" alt="Configuração Kali Linux" width="700">
+    <img src="images/Kali_01.png" alt="Configuração Kali Linux" width="700">
   </details>
 </div>
 
