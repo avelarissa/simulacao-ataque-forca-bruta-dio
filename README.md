@@ -98,3 +98,83 @@ A seguir estão as instruções reprodutíveis para criação do laboratório is
 </div>
 
 7. A instalação pode levar alguns minutos. Após concluída, o Kali estará pronto para uso.
+
+### C. Criar a VM Metasploitable2 (a partir do VMDK)
+
+1. Acesse o site indicado, faça o download e extraia os arquivos contidos na pasta.
+2. No VirtualBox clique em New (Novo).
+3. VM Name: Metasploitable → OS: Linux → OS Destribuition: Other Linux → OS Version: Other Linux (32-bit) → Next.
+
+<div align="right">
+  <details>
+    <summary font-weight: bold;>
+      [Configuração Metasploitable]
+    </summary>
+    <img src="images/Metasploitable_01.png" alt="Configuração Metasploitable" width="600">
+  </details>
+</div>
+
+4. Mais uma vez, para o uso neste laboratório, manteremos as especificações de hardware virtual recomendadas pelo próprio sistema.
+
+<div align="right">
+  <details>
+    <summary font-weight: bold;>
+      [Especificação de hardware virtual]
+    </summary>
+    <img src="images/Metasploitable_02.png" alt="Configuração Metasploitable" width="600">
+  </details>
+</div>
+
+5. Na página seguinte, verifique se todas as especificações estão corretas e finalize a configuração da máquina virtual.
+6. Selecione a VM criada → Settings → System → Motherboard → em Boot Order deixe apenas Hard Disk marcado (desmarque Floppy/Optical).
+
+<div align="right">
+  <details>
+    <summary font-weight: bold;>
+      [Configuração de boot]
+    </summary>
+    <img src="images/Metasploitable_03.png" alt="Configuração Metasploitable" width="600">
+  </details>
+</div>
+
+7. Settings → Storage → selecione o disco VDI criado e clique no ícone de remoção (ícone com sinal de menos) para remover o disco temporário.
+
+<div align="right">
+  <details>
+    <summary font-weight: bold;>
+      [Configuração de armazenamento 1]
+    </summary>
+    <img src="images/Metasploitable_04.png" alt="Configuração Metasploitable" width="600">
+  </details>
+</div>
+
+8. Ainda em Storage, clique no ícone Add Hard Disk (ao lado do controlador SATA) → Choose existing disk... → navegue até o .vmdk extraído e Open / Choose.
+
+<div align="right">
+  <details>
+    <summary font-weight: bold;>
+      [Configuração de armazenamento 2]
+    </summary>
+    <img src="images/Metasploitable_05.png" alt="Configuração Metasploitable" width="600">
+  </details>
+</div>
+
+<div align="right">
+  <details>
+    <summary font-weight: bold;>
+      [Configuração de armazenamento 3]
+    </summary>
+    <img src="images/Metasploitable_06.png" alt="Configuração Metasploitable" width="600">
+  </details>
+</div>
+
+<div align="right">
+  <details>
+    <summary font-weight: bold;>
+      [Configuração de armazenamento 4]
+    </summary>
+    <img src="images/Metasploitable_07.png" alt="Configuração Metasploitable" width="600">
+  </details>
+</div>
+
+9. Clique em OK e inicie a VM. Login: msfadmin / Password: msfadmin.
