@@ -181,7 +181,7 @@ Observação: para esta VM, não selecionaremos nenhum arquivo em ISO Image.
 <div align="right">
   <details>
     <summary font-weight: bold;>
-      [Configuração de armazenamento 3]
+      [Lista de discos VMDK]
     </summary>
     <img src="images/10-metasploitable-storage-3.png" alt="Visão da lista de discos após inclusão do VMDK" width="600">
   </details>
