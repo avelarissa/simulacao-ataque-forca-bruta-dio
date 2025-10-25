@@ -210,7 +210,7 @@ ip addr
 # ou, se preferir:
 ifconfig
 ```
-2. Localize o IP associado à interface do Host-Only (ex.: eth1, eth0 ou enp0s8)
+2. Localize o IP associado à interface do Host-Only (ex.: eth1, eth0 ou enp0s8).
 3. IP esperado: algo na faixa 192.168.56.X (ex.: 192.168.56.102).
 
 #### Metasploitable2
@@ -232,3 +232,5 @@ ifconfig
 ```bash
 ping c3 192.168.56.101
 ```
+2. Resultado esperado: 3 respostas (ex.: 64 bytes from 192.168.56.101: ...) e 0% packet loss.
+3. Se o ping não responder: verifique se ambas as VMs estão conectadas ao mesmo Host-Only Adapter (vboxnet0).
