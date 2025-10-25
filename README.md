@@ -38,7 +38,7 @@ A seguir estão descritas as principais tecnologias e ferramentas empregadas no 
 | Kali Linux              | 2025.3 | [kali.org](https://www.kali.org/get-kali/#kali-platforms)                     |
 | Metasploitable 2        |     v2 | [Metasploitable2](https://sourceforge.net/projects/metasploitable/files/Metasploitable2/) |
 
-As demais ferramentas utilizadas neste laboratório são fornecidas por padrão nas imagens oficiais do Kali Linux. Se, por algum motivo, estiverem ausentes ou se preferir reinstalá‑las, é possível instalar/atualizar essas ferramentas diretamente pelo terminal do Kali com o gerenciador de pacotes ```apt```. 
+As demais ferramentas utilizadas neste laboratório são fornecidas por padrão nas imagens oficiais do Kali Linux. Se, por algum motivo, estiverem ausentes ou se preferir reinstalá‑las, é possível instalar/atualizar essas ferramentas diretamente pelo terminal do Kali com o gerenciador de pacotes `apt`. 
 
 ```bash
 sudo apt update && sudo apt install -y hydra medusa nmap enum4linux smbclient
@@ -272,4 +272,37 @@ ping -c 3 192.168.56.101
 
 ## Enumeração de Serviços (Reconhecimento Ativo)
 
-Antes de proceder ao ataque de força bruta, identificaram‑se os serviços ativos no sistema alvo. Para este exercício, realizou‑se uma varredura focalizada que confirmou a presença do serviço FTP (porta 21) no Metasploitable2. O propósito desta etapa foi verificar se o FTP estava ativo e apto a aceitar conexões, além de mapear a presença e a disponibilidade de outros serviços comumente explorados em alvos vulneráveis.
+Com a conectividade devidamente validada, realizou-se o reconhecimento ativo do sistema alvo por meio do Nmap, a fim de mapear portas abertas, identificar os serviços em execução e coletar informações sobre suas versões. Essa etapa teve como finalidade confirmar a exposição do serviço FTP (porta 21), alvo principal deste estudo, e detectar outros serviços acessíveis que pudessem representar vetores adicionais de exploração.
+
+### A. Varredura de Portas e Identificação de Versões (Nmap)
+
+O comando a seguir foi executado no Kali Linux para enumerar os serviços mais relevantes do Metasploitable2, incluindo FTP, SSH, HTTP e SMB:
+
+```bash
+nmap -sV -p 21,22,80,139,445 192.168.56.101
+```
+
+<div align="right">
+  <details>
+    <summary font-weight: bold;>
+      [Comando Nmap executado]
+    </summary>
+    <img src="images/14-nmap-command.png" alt="Comando Nmap executado" width="600">
+  </details>
+</div>
+
+| Parâmetro | Função                                                                                |
+| --------- | ------------------------------------------------------------------------------------- |
+| `-sV`     | Realiza detecção de versão dos serviços identificados.                                |
+| `-p`      | Restringe a varredura às portas especificadas (21=FTP, 22=SSH, 80=HTTP, 139/445=SMB). |
+
+A varredura realizada com o Nmap confirmou que a porta 21 encontra-se aberta, sendo o serviço identificado como vsftpd 2.3.4 (21/tcp open ftp vsftpd 2.3.4). Adicionalmente, foram detectadas respostas para as portas 22 (SSH), 80 (HTTP) e 139/445 (SMB), indicando a presença de serviços complementares passíveis de investigação.
+
+<div align="right">
+  <details>
+    <summary font-weight: bold;>
+      [Resultado da varredura Nmap]
+    </summary>
+    <img src="images/15-nmap-output-vsftpd.png" alt="Resultado da varredura" width="600">
+  </details>
+</div>
