@@ -202,7 +202,7 @@ Para cada VM (Kali Linux e Metasploitable2):
 5. Salve as configurações e inicie as máquinas.
 
 ### E. Validação dos Endereços IP
-### Kali Linux
+#### Kali Linux
 1. Abra o terminal e execute: 
 
 ```bash
@@ -213,7 +213,7 @@ ifconfig
 2. Localize o IP associado à interface do Host-Only (ex.: eth1, eth0 ou enp0s8)
 3. IP esperado: algo na faixa 192.168.56.X (ex.: 192.168.56.102).
 
-### Metasploitable2
+#### Metasploitable2
 
 1. Faça login na VM e execute:
 
