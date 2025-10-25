@@ -206,7 +206,7 @@ Para cada VM (Kali Linux e Metasploitable2):
 1. Abra o terminal e execute: 
 
 ```bash
-ip addr show
+ip addr
 # ou, se preferir:
 ifconfig
 ```
@@ -218,7 +218,7 @@ ifconfig
 1. Faça login na VM e execute:
 
 ```bash
-ip addr show
+ip addr
 # ou, se preferir:
 ifconfig
 ```
