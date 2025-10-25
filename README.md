@@ -27,6 +27,7 @@ A seguir estão descritas as principais tecnologias e ferramentas empregadas no 
 | smbclient                   | Cliente SMB          | Acesso e testes de autenticação em shares SMB; verificação prática de permissões. |
 | Wordlists (ex.: users.txt, passwords.txt) | Base para ataques | Listas de usuários e senhas usadas nas tentativas de força bruta. |
 
+
 ## Links oficiais para download
 
 | Ferramenta / Tecnologia | Versão | Link                                                                          |
@@ -50,7 +51,7 @@ nmap --version
 
 ## Configuração do Ambiente
 
-### 1. Instalação do VirtualBox, criação das VMs (Kali, Metasploitable) e preparo da rede Host-Only
+### Instalação do VirtualBox, criação das VMs (Kali, Metasploitable) e preparo da rede Host-Only
 
 A seguir estão as instruções reprodutíveis para criação do laboratório isolado com Kali Linux (atacante), Metasploitable2 (alvo) e uma rede Host-Only dedicada.
 
@@ -193,9 +194,41 @@ Para cada VM (Kali Linux e Metasploitable2):
     <summary font-weight: bold;>
       [Configuração da Rede Host-Only]
     </summary>
-    <img src="images/Metasploitable_07.png" alt="Configuração da Rede Host-Only" width="600">
+    <img src="images/Rede_01.png" alt="Configuração da Rede Host-Only" width="600">
   </details>
 </div>
 
 4. Certifique-se de que não há outros adaptadores habilitados.
 5. Salve as configurações e inicie as máquinas.
+
+### E. Validação dos Endereços IP
+### Kali Linux
+1. Abra o terminal e execute: 
+
+```bash
+ip addr show
+# ou, se preferir:
+ifconfig
+```
+2. Localize o IP associado à interface do Host-Only (ex.: eth1, eth0 ou enp0s8)
+3. IP esperado: algo na faixa 192.168.56.X (ex.: 192.168.56.102).
+
+### Metasploitable2
+
+1. Faça login na VM e execute:
+
+```bash
+ip addr show
+# ou, se preferir:
+ifconfig
+```
+2. Localize o IP associado à interface do Host-Only (geralmente eth0).
+3. IP esperado: algo na faixa 192.168.56.Y (ex.: 192.168.56.101).
+
+### F. Teste de Conectividade
+
+Do Kali, teste a comunicação com o Metasploitable:
+
+```bash
+ping c3 192.168.56.101
+```
