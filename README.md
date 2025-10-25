@@ -230,7 +230,7 @@ ifconfig
 1. Do Kali, teste a comunicação com o Metasploitable:
 
 ```bash
-ping c3 192.168.56.101
+ping -c 3 192.168.56.101
 ```
 2. Resultado esperado: 3 respostas (ex.: 64 bytes from 192.168.56.101: ...) e 0% packet loss.
 3. Se o ping não responder: verifique se ambas as VMs estão conectadas ao mesmo Host-Only Adapter (vboxnet0).
