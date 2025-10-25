@@ -270,7 +270,7 @@ ping -c 3 192.168.56.101
   </details>
 </div>
 
-## Enumeração de Serviços (Reconhecimento Ativo)
+## Enumeração de Serviços
 
 Com a conectividade devidamente validada, realizou-se o reconhecimento ativo do sistema alvo por meio do Nmap, a fim de mapear portas abertas, identificar os serviços em execução e coletar informações sobre suas versões. Essa etapa teve como finalidade confirmar a exposição do serviço FTP (porta 21), alvo principal deste estudo, e detectar outros serviços acessíveis que pudessem representar vetores adicionais de exploração.
 
@@ -319,4 +319,4 @@ A exibição imediata do prompt de autenticação (`Name:`) confirmou que o serv
   </details>
 </div>
 
-## Criação das Wordlists (Lista de Tentativas)
+## Criação das Wordlists
