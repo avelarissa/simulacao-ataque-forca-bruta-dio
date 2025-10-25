@@ -306,3 +306,24 @@ A varredura realizada com o Nmap confirmou que a porta 21 encontra-se aberta, se
     <img src="images/15-nmap-output-vsftpd.png" alt="Resultado da varredura" width="600">
   </details>
 </div>
+
+### B. Validação Manual do Serviço FTP
+
+Antes da execução das tentativas de força bruta com o Hydra ou o Medusa, realizou-se uma validação manual da resposta do serviço FTP, assegurando que ele está de fato ativo e respondendo a solicitações de conexão.
+
+Comando executado:
+
+```bash
+ftp 192.168.56.101
+```
+
+A exibição imediata do prompt de autenticação (`Name:`) confirmou que o serviço FTP estava operacional e aceitava conexões na porta 21.
+
+<div align="right">
+  <details>
+    <summary font-weight: bold;>
+      [Validação manual do serviço FTP]
+    </summary>
+    <img src="images/16-ftp-validation.png" alt="Validação manual do serviço FTP" width="600">
+  </details>
+</div>
