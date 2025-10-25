@@ -227,7 +227,7 @@ ifconfig
 
 ### F. Teste de Conectividade
 
-Do Kali, teste a comunicação com o Metasploitable:
+1. Do Kali, teste a comunicação com o Metasploitable:
 
 ```bash
 ping c3 192.168.56.101
