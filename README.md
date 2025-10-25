@@ -266,7 +266,7 @@ ping -c 3 192.168.56.101
     <summary font-weight: bold;>
       [Teste de conectividade Kali → Metasploitable]
     </summary>
-    <img src="images/13-metasploitable-ipaddr.png" alt="Teste de ping para Metasploitable" width="600">
+    <img src="images/14-kali-ping.png" alt="Teste de ping para Metasploitable" width="600">
   </details>
 </div>
 
@@ -281,15 +281,6 @@ O comando a seguir foi executado no Kali Linux para enumerar os serviços mais r
 ```bash
 nmap -sV -p 21,22,80,139,445 192.168.56.101
 ```
-
-<div align="right">
-  <details>
-    <summary font-weight: bold;>
-      [Comando Nmap executado]
-    </summary>
-    <img src="images/14-nmap-command.png" alt="Comando Nmap executado" width="600">
-  </details>
-</div>
 
 | Parâmetro | Função                                                                                |
 | --------- | ------------------------------------------------------------------------------------- |
@@ -327,3 +318,5 @@ A exibição imediata do prompt de autenticação (`Name:`) confirmou que o serv
     <img src="images/16-ftp-validation.png" alt="Validação manual do serviço FTP" width="600">
   </details>
 </div>
+
+## Criação das Wordlists (Lista de Tentativas)
