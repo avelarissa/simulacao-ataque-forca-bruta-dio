@@ -320,3 +320,31 @@ A exibição imediata do prompt de autenticação (`Name:`) confirmou que o serv
 </div>
 
 ## Criação das Wordlists
+
+Para suportar as tentativas de autenticação automatizadas (Hydra/Medusa), procedeu‑se à geração de wordlists controladas de utilizadores e senhas, armazenadas em `wordlists/`. Optou-se pela criação direta em ambiente terminal usando o editor `nano` pela sua disponibilidade nas imagens Kali, operação em modo texto e baixo impacto sobre a plataforma, o que favorece reprodutibilidade, reduz dependências externas e facilita a documentação e auditoria das entradas. 
+
+As listas foram deliberadamente curtas e documentadas, contendo entradas representativas do ambiente Metasploitable2 (ex.: `admin`, `guest`, `user`, `msfadmin`, `testuser` para usuários; `admin`, `P@ssw0rd!`, `Password123`, `msfadmin`, `123456` para senhas).
+
+Comando executado:
+
+```bash
+nano wordlists/users.txt   # e, posteriormente, nano wordlists/passwords.txt
+```
+
+<div align="right">
+  <details>
+    <summary font-weight: bold;>
+      [Criação e verificação das wordlists]
+    </summary>
+    <img src="images/17-wordlists-nano.png" alt="Validação manual do serviço FTP" width="600">
+  </details>
+</div>
+
+<div align="right">
+  <details>
+    <summary font-weight: bold;>
+      [Interface nano]
+    </summary>
+    <img src="images/18-interface-nano.png" alt="Validação manual do serviço FTP" width="600">
+  </details>
+</div>
