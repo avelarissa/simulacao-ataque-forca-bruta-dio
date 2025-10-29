@@ -8,7 +8,7 @@ O laboratório foi composto por uma máquina atacante (Kali Linux) e por alvos v
 
 A documentação inclui a configuração do ambiente, wordlists e comandos utilizados, evidências dos testes (capturas de tela), além de análises e recomendações de mitigação, como bloqueio por tentativas, rate limiting, MFA, políticas de senha e monitoramento contínuo.
 
->⚠️ Aviso Ético-Legal: Todos os procedimentos, comandos e evidências deste repositório foram realizados em máquinas virtuais isoladas e destinam-se exclusivamente a fins educacionais, de pesquisa e auditoria interna. As máquinas e aplicações-alvo utilizadas (como Metasploitable2 e DVWA) são intencionalmente vulneráveis, permitindo a prática segura de técnicas de segurança ofensiva.
+> [!Aviso Ético-Legal]: Todos os procedimentos, comandos e evidências deste repositório foram realizados em máquinas virtuais isoladas e destinam-se exclusivamente a fins educacionais, de pesquisa e auditoria interna. As máquinas e aplicações-alvo utilizadas (como Metasploitable2 e DVWA) são intencionalmente vulneráveis, permitindo a prática segura de técnicas de segurança ofensiva.
 >
 >O escopo das atividades foi estritamente limitado às máquinas virtuais descritas. Não houve varredura, exploração ou coleta de dados em sistemas ou redes de terceiros. A reprodução ou aplicação das técnicas aqui documentadas em sistemas sem autorização por escrito constitui ato ilícito, sujeito a responsabilização legal.
 
