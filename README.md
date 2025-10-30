@@ -4,11 +4,11 @@
 
 Este repositório apresenta a documentação referente ao Desafio de Projeto em Segurança Cibernética proposto pela Digital Innovation One (DIO). O objetivo do estudo consiste em simular e analisar cenários de ataques de força bruta (Brute Force) em um ambiente controlado e isolado, com o propósito de compreender suas dinâmicas e avaliar medidas de mitigação eficazes.
 
-O laboratório foi composto por uma máquina atacante (Kali Linux) e por alvos vulneráveis (Metasploitable2 e DVWA), interconectados em uma rede isolada configurada por meio do VirtualBox. Foram realizados testes direcionados a serviços comumente explorados, como FTP, SMB e formulários web, empregando ferramentas especializadas de força bruta, tais como Hydra e Medusa.
+O laboratório foi composto por uma máquina atacante (Kali Linux) e por alvos vulneráveis (Metasploitable2 e DVWA), interconectados em uma rede isolada configurada por meio do VirtualBox. Foram realizados testes direcionados a serviços comumente explorados, como FTP, SMB e formulários web, empregando ferramentas especializadas de força bruta, tais como `hydra` e `medusa`.
 
 A documentação inclui a configuração do ambiente, wordlists e comandos utilizados, evidências dos testes (capturas de tela), além de análises e recomendações de mitigação, como bloqueio por tentativas, rate limiting, MFA, políticas de senha e monitoramento contínuo.
 
-> ⚠️ Aviso Ético-Legal: Todos os procedimentos, comandos e evidências deste repositório foram realizados em máquinas virtuais isoladas e destinam-se exclusivamente a fins educacionais, de pesquisa e auditoria interna. As máquinas e aplicações-alvo utilizadas (como Metasploitable2 e DVWA) são intencionalmente vulneráveis, permitindo a prática segura de técnicas de segurança ofensiva.
+>⚠️ Aviso Ético-Legal: Todos os procedimentos, comandos e evidências deste repositório foram realizados em máquinas virtuais isoladas e destinam-se exclusivamente a fins educacionais, de pesquisa e auditoria interna. As máquinas e aplicações-alvo utilizadas (como Metasploitable2 e DVWA) são intencionalmente vulneráveis, permitindo a prática segura de técnicas de segurança ofensiva.
 >
 >O escopo das atividades foi estritamente limitado às máquinas virtuais descritas. Não houve varredura, exploração ou coleta de dados em sistemas ou redes de terceiros. A reprodução ou aplicação das técnicas aqui documentadas em sistemas sem autorização por escrito constitui ato ilícito, sujeito a responsabilização legal.
 
@@ -38,7 +38,7 @@ A seguir estão descritas as principais tecnologias e ferramentas empregadas no 
 | Kali Linux              | 2025.3 | [kali.org](https://www.kali.org/get-kali/#kali-platforms)                     |
 | Metasploitable 2        |     v2 | [Metasploitable2](https://sourceforge.net/projects/metasploitable/files/Metasploitable2/) |
 
-As demais ferramentas utilizadas neste laboratório são fornecidas por padrão nas imagens oficiais do Kali Linux. Se, por algum motivo, estiverem ausentes ou se preferir reinstalá‑las, é possível instalar/atualizar essas ferramentas diretamente pelo terminal do Kali com o gerenciador de pacotes `apt`. 
+As demais ferramentas utilizadas neste laboratório estão disponíveis por padrão nas imagens oficiais do Kali Linux. Caso algum não esteja presente, é possível instalá-lo ou atualizá-lo diretamente pelo terminal do Kali, utilizando o gestor de pacotes `apt`, por exemplo:
 
 ```bash
 sudo apt update && sudo apt install -y hydra medusa nmap enum4linux smbclient
@@ -272,7 +272,7 @@ ping -c 3 192.168.56.101
 
 ## Enumeração de Serviços
 
-Com a conectividade devidamente validada, realizou-se o reconhecimento ativo do sistema alvo por meio do Nmap, a fim de mapear portas abertas, identificar os serviços em execução e coletar informações sobre suas versões. Essa etapa teve como finalidade confirmar a exposição do serviço FTP (porta 21), alvo principal deste estudo, e detectar outros serviços acessíveis que pudessem representar vetores adicionais de exploração.
+Com a conectividade devidamente validada, realizou-se o reconhecimento ativo do sistema alvo por meio do `Nmap`, a fim de mapear portas abertas, identificar os serviços em execução e coletar informações sobre suas versões. Essa etapa teve como finalidade confirmar a exposição do serviço FTP (porta 21), alvo principal deste estudo, e detectar outros serviços acessíveis que pudessem representar vetores adicionais de exploração.
 
 ### A. Varredura de Portas e Identificação de Versões (Nmap)
 
@@ -300,7 +300,7 @@ A varredura realizada com o Nmap confirmou que a porta 21 encontra-se aberta, se
 
 ### B. Validação Manual do Serviço FTP
 
-Antes da execução das tentativas de força bruta com o Hydra ou o Medusa, realizou-se uma validação manual da resposta do serviço FTP, assegurando que ele está de fato ativo e respondendo a solicitações de conexão.
+Realizou-se, em seguida, uma validação manual do serviço FTP para confirmar que este estava ativo e respondia a solicitações de conexão.
 
 Comando executado:
 
@@ -321,7 +321,7 @@ A exibição imediata do prompt de autenticação (`Name:`) confirmou que o serv
 
 ## Criação das Wordlists
 
-Para suportar as tentativas de autenticação automatizadas (Hydra/Medusa), procedeu‑se à geração de wordlists controladas de utilizadores e senhas, armazenadas em `wordlists/`. Optou-se pela criação direta em ambiente terminal usando o editor `nano` pela sua disponibilidade nas imagens Kali, operação em modo texto e baixo impacto sobre a plataforma, o que favorece reprodutibilidade, reduz dependências externas e facilita a documentação e auditoria das entradas. 
+Para suportar as tentativas de autenticação automatizadas (hydra/medusa), procedeu‑se à geração de wordlists controladas de utilizadores e senhas, armazenadas em `wordlists/`. Optou-se pela criação direta em ambiente terminal usando o editor `nano` pela sua disponibilidade nas imagens Kali, operação em modo texto e baixo impacto sobre a plataforma, o que favorece reprodutibilidade, reduz dependências externas e facilita a documentação e auditoria das entradas. 
 
 As listas foram deliberadamente curtas e documentadas, contendo entradas representativas do ambiente Metasploitable2 (ex.: `admin`, `guest`, `user`, `msfadmin`, `testuser` para usuários; `admin`, `P@ssw0rd!`, `Password123`, `msfadmin`, `123456` para senhas).
 
@@ -339,7 +339,7 @@ nano wordlists/users.txt   # e, posteriormente, nano wordlists/passwords.txt
     <img src="images/17-wordlists-nano.png" alt="Validação manual do serviço FTP" width="600">
   </details>
 </div>
-
+ 
 <div align="right">
   <details>
     <summary font-weight: bold;>
@@ -348,3 +348,24 @@ nano wordlists/users.txt   # e, posteriormente, nano wordlists/passwords.txt
     <img src="images/18-interface-nano.png" alt="Validação manual do serviço FTP" width="600">
   </details>
 </div>
+
+## Ataque de Força Bruta ao Serviço FTP com Medusa
+
+Com o serviço FTP confirmado como ativo (porta 21) e as wordlists preparadas, realizou-se um ensaio controlado de força bruta com a ferramenta `medusa`, visando identificar eventuais credenciais válidas e produzir evidências documentadas para análise e recomendações.
+
+Comando executado:
+
+```bash
+medusa -h 192.168.56.101 -U wordlists/users.txt -P wordlists/passwords.txt -M ftp -t 2 -O resultado_medusa.txt
+```
+
+| Parâmetro | Função                                                            |
+| --------- | ----------------------------------------------------------------- |
+| `-h`      | Define o endereço IP ou hostname do alvo.                         |
+| `-U`      | Especifica o arquivo com a lista de utilizadores (um por linha).  |
+| `-P`      | Especifica o arquivo com a lista de senhas (uma por linha).       |
+| `-M`      | Define o módulo/protocolo a ser atacado (neste caso, FTP).        |
+| `-t`      | Determina o número de threads/conexões simultâneas.               |
+| `-O`      | Redireciona os resultados para o arquivo indicado.                |
+
+O comando instrui o Medusa a utilizar as listas de utilizadores e de senhas para tentar forçar o acesso ao serviço FTP em `192.168.56.101`, executando as tentativas de forma concorrente com duas threads (`-t 2`) e registrando todo o log de operações no arquivo `resultado_medusa.txt` (`-O resultado_medusa.txt`) para posterior análise.
