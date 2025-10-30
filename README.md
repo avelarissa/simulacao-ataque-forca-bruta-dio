@@ -333,10 +333,10 @@ nano wordlists/users.txt   # e, posteriormente, nano wordlists/passwords.txt
 
 <div align="right">
   <details>
-    <summary font-weight: bold;>
-      [Criação e verificação das wordlists]
+    <summary>
+      [Wordlists]
     </summary>
-    <img src="images/17-wordlists-nano.png" alt="Validação manual do serviço FTP" width="600">
+    <img src="images/17-wordlists-nano.png" alt="Edição e validação de wordlists no editor nano" width="600">
   </details>
 </div>
  
@@ -345,7 +345,7 @@ nano wordlists/users.txt   # e, posteriormente, nano wordlists/passwords.txt
     <summary font-weight: bold;>
       [Interface nano]
     </summary>
-    <img src="images/18-interface-nano.png" alt="Validação manual do serviço FTP" width="600">
+    <img src="images/18-nano-interface.png" alt="Validação manual do serviço FTP" width="600">
   </details>
 </div>
 
@@ -369,3 +369,23 @@ medusa -h 192.168.56.101 -U wordlists/users.txt -P wordlists/passwords.txt -M ft
 | `-O`      | Redireciona os resultados para o arquivo indicado.                |
 
 O comando instrui o Medusa a utilizar as listas de utilizadores e de senhas para tentar forçar o acesso ao serviço FTP em `192.168.56.101`, executando as tentativas de forma concorrente com duas threads (`-t 2`) e registrando todo o log de operações no arquivo `resultado_medusa.txt` (`-O resultado_medusa.txt`) para posterior análise.
+
+<div align="right">
+  <details>
+    <summary>
+      [Execução Medusa]
+    </summary>
+    <img src="images/19-medusa-execution.png" alt="Ataque de força bruta ao serviço FTP com Medusa" width="600">
+  </details>
+</div>
+
+<div align="right">
+  <details>
+    <summary font-weight: bold;>
+      [Credenciais encontradas]
+    </summary>
+    <img src="images/20-medusa-credentials.png" alt="Credencial bem-sucedida identificada" width="600">
+  </details>
+</div>
+
+## Ataque de Força Bruta em Formulário Web (DVWA)
